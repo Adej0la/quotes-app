@@ -1,6 +1,6 @@
 ## About
 
-A simple app that will generate quotes randomly and enable you post them to Twitter or Tumblr
+A simple app that will generate quotes randomly and enable you post them to Twitter
 
 ## What I learned
 

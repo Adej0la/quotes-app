@@ -5,7 +5,7 @@ import Button from "./components/Button";
 function QuotesApp() {
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
-  const [color, setColor] = useState("black");
+  const [color, setColor] = useState("");
 
   const URL =
     "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json";
@@ -66,9 +66,14 @@ function QuotesApp() {
         className="container-fluid vh-100 d-flex justify-content-center align-items-center"
         style={{ backgroundColor: color, color: color }}
       >
-        <section className="card" style={{ width: "500px" }}>
+        <section
+          className="card"
+          style={{ minWidth: "350px", maxWidth: "500px" }}
+        >
           <div className="card-body">
-            <p className="card-text text-center">{quote}</p>
+            <p className="card-text text-center" style={{ fontSize: "2rem" }}>
+              {quote}
+            </p>
             <p className="text-right" style={{ textAlign: "right" }}>
               {author}
             </p>
@@ -81,7 +86,7 @@ function QuotesApp() {
             >
               <Button
                 text="Twitter"
-                linkTo={"https://www.google.com"}
+                linkTo={`https://www.twitter.com/intent/tweet?text=${quote}-${author}`}
                 color={color}
               />
               <Button
@@ -90,7 +95,11 @@ function QuotesApp() {
                 color={color}
               />
             </div>
-            <button className="btn btn-primary" onClick={getQuote}>
+            <button
+              className="btn btn-primary"
+              onClick={getQuote}
+              style={{ backgroundColor: color, border: "none" }}
+            >
               New Quote
             </button>
           </div>
